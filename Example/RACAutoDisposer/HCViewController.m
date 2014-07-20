@@ -8,7 +8,9 @@
 
 #import "HCViewController.h"
 
-@interface HCViewController ()
+@interface HCViewController () <RACAutoDisposerProtocol>
+
+@property (nonatomic, strong) NSString *subscribedString;
 
 @end
 
@@ -18,6 +20,31 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    for (NSInteger i=0; i<10; i++) {
+        [self leaveToomanySubscriptions];
+        [self onlyOneSubscriptionSurvive];
+    }
+
+    self.subscribedString = @"string changed";
+}
+
+- (void)leaveToomanySubscriptions
+{
+    [[RACObserve(self, subscribedString) skip:1]
+     subscribeNext:^(id x) {
+         NSLog(@"[TOO MANY] %@", x);
+     }];
+}
+
+- (void)onlyOneSubscriptionSurvive
+{
+    @RACAutoDispose(@"subscribedString", {
+        [[RACObserve(self, subscribedString) skip:1]
+         subscribeNext:^(id x) {
+             NSLog(@"[ONLY ONE] %@", x);
+         }];
+    })
 }
 
 - (void)didReceiveMemoryWarning

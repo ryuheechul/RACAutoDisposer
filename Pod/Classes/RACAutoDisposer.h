@@ -12,9 +12,9 @@
 #define RACAutoDispose(DISPOSAL_NAME, DISPOSAL) \
 try {} @finally {} \
 { \
-RACDisposable *OLD_DISPOSAL = [[RACAutoDisposer sharedHelper] disposableWithOwner:self name:DISPOSAL_NAME]; \
+RACDisposable *OLD_DISPOSAL = [[RACAutoDisposer sharedDisposer] disposableWithOwner:self name:DISPOSAL_NAME]; \
 [OLD_DISPOSAL dispose]; \
-[[RACAutoDisposer sharedHelper] pushDisposable:(DISPOSAL) owner:self name:DISPOSAL_NAME]; \
+[[RACAutoDisposer sharedDisposer] pushDisposable:(DISPOSAL) owner:self name:DISPOSAL_NAME]; \
 }
 
 @protocol RACAutoDisposerProtocol <NSObject>
@@ -23,7 +23,7 @@ RACDisposable *OLD_DISPOSAL = [[RACAutoDisposer sharedHelper] disposableWithOwne
 @interface RACAutoDisposer : NSObject
 @property (nonatomic, strong) NSMutableDictionary *disposableDictionary;
 
-+ (RACAutoDisposer *)sharedHelper;
++ (RACAutoDisposer *)sharedDisposer;
 - (void)pushDisposable:(RACDisposable *)disposable owner:(id<RACAutoDisposerProtocol>)owner name:(NSString *)name;
 - (RACDisposable *)disposableWithOwner:(id<RACAutoDisposerProtocol>)owner name:(NSString *)name;
 - (void)removeOwner:(id<RACAutoDisposerProtocol>)owner;

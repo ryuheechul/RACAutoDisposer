@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "RACAutoDisposer"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "Dispose RACSubscriptions with an easy way"
   s.homepage         = "https://github.com/ryuheechul/RACAutoDisposer"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"

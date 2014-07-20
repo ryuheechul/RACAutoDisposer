@@ -66,7 +66,7 @@
         return;
     }
 
-    [[RACAutoDisposer sharedHelper] removeOwner:(id<RACAutoDisposerProtocol>)self];
+    [[RACAutoDisposer sharedDisposer] removeOwner:(id<RACAutoDisposerProtocol>)self];
 }
 
 @end
@@ -74,14 +74,14 @@
 
 @implementation RACAutoDisposer
 
-+ (RACAutoDisposer *)sharedHelper
++ (RACAutoDisposer *)sharedDisposer
 {
-    static RACAutoDisposer *_sharedHelper;
+    static RACAutoDisposer *_sharedDisposer;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedHelper = [RACAutoDisposer new];
+        _sharedDisposer = [RACAutoDisposer new];
     });
-    return _sharedHelper;
+    return _sharedDisposer;
 }
 
 - (void)pushDisposable:(RACDisposable *)disposable owner:(id)owner name:(NSString *)name
