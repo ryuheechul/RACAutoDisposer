@@ -1,5 +1,9 @@
 # RACAutoDisposer
 
+[![Version](https://img.shields.io/cocoapods/v/RACAutoDisposer.svg?style=flat)](http://cocoadocs.org/docsets/RACAutoDisposer)
+[![License](https://img.shields.io/cocoapods/l/RACAutoDisposer.svg?style=flat)](http://cocoadocs.org/docsets/RACAutoDisposer)
+[![Platform](https://img.shields.io/cocoapods/p/RACAutoDisposer.svg?style=flat)](http://cocoadocs.org/docsets/RACAutoDisposer)
+
 ### Have a trouble because your RAC Subscriptions are being called even though you want them to be gone after reuse your views like UITableViewCell?
 
 ## Solve the problem with adding few lines of code.
@@ -61,3 +65,8 @@ Ryu Heechul, ryuhcii@gmail.com
 ## License
 
 RACAutoDisposer is available under the MIT license. See the LICENSE file for more info.
+
+## Contribution
+
+welcome your contributions!
+send me pull requests or open a issue and give me an idea to make this better!
