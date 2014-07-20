@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
   s.name             = "RACAutoDisposer"
   s.version          = "0.1.0"
-  s.summary          = "Dispose RACSubscription with an easy way"
+  s.summary          = "Dispose RACSubscriptions with an easy way"
   s.homepage         = "https://github.com/ryuheechul/RACAutoDisposer"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
@@ -18,11 +18,11 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/ryuheechul/RACAutoDisposer.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/ryuheechul'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '6.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
-  s.resources = 'Pod/Assets/*.png'
+  # s.resources = 'Pod/Assets/*.png'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

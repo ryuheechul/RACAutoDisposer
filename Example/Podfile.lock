@@ -14,7 +14,6 @@ PODS:
 DEPENDENCIES:
   - Expecta
   - RACAutoDisposer (from `../`)
-  - ReactiveCocoa
   - Specta (~> 0.2.1)
 
 EXTERNAL SOURCES:
@@ -23,7 +22,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
-  RACAutoDisposer: 689fb3e0407cd8492fe1d4afa806baf32ef610ed
+  RACAutoDisposer: 855fa1d20cdf7edd6e41424529191536ff834f51
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
   Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
 
