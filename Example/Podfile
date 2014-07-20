@@ -1,5 +1,6 @@
 target 'RACAutoDisposer', :exclusive => true do
   pod "RACAutoDisposer", :path => "../"
+  pod "ReactiveCocoa"
 end
 
 target 'Tests', :exclusive => true do
